@@ -1,7 +1,6 @@
 import requests, os, argparse
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-load_dotenv()
 
 def count_clicks(token, link):
     response_url = f'https://api-ssl.bitly.com/v4/bitlinks/{link}/clicks/summary'
@@ -27,6 +26,7 @@ def shorten_link(token, url):
     return link
   
 if __name__ == "__main__":
+    load_dotenv()
     parser = argparse.ArgumentParser(
         description='Count clicks on bitlinks'
     )
